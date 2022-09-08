@@ -27,24 +27,30 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 video_path = "./IMAGES/test.mp4"
 
 
-def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES,
-                    score_threshold=0.3, iou_threshold=0.45, rectangle_colors='', Track_only=[]):
-    # Definition of the parameters
-    max_cosine_distance = 0.7
-    nn_budget = None
+def setup_tracker(max_cosine_distance=0.7, nn_budget=None):
+    metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
+    tracker = Tracker(metric)
+    return tracker
 
+
+def setup_input(input_path):
+    if input_path:
+        vid = cv2.VideoCapture(input_path)  # detect on video
+    else:
+        vid = cv2.VideoCapture(0)  # detect from webcam
+    return vid
+
+
+def Object_tracking(Yolo, input_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES,
+                    score_threshold=0.3, iou_threshold=0.45, rectangle_colors='', Track_only=[]):
     # initialize deep sort object
     model_filename = 'model_data/mars-small128.pb'
     encoder = gdet.create_box_encoder(model_filename, batch_size=1)
-    metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
-    tracker = Tracker(metric)
+    tracker = setup_tracker()
 
     times, times_2 = [], []
 
-    if video_path:
-        vid = cv2.VideoCapture(video_path)  # detect on video
-    else:
-        vid = cv2.VideoCapture(0)  # detect from webcam
+    vid = setup_input(input_path)
 
     # by default VideoCapture returns float instead of int
     width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))
