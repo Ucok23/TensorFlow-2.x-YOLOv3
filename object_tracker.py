@@ -13,8 +13,8 @@ import os
 import cv2
 import numpy as np
 import tensorflow as tf
-from yolov3.utils import Load_Yolo_model, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names
-from yolov3.configs import *
+from yolo.utils import Load_Yolo_model, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names
+from yolo.configs import *
 import time
 
 from deep_sort import nn_matching
