@@ -41,11 +41,12 @@ def setup_input(input_path):
     return vid
 
 
-def Object_tracking(Yolo, input_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES,
+def object_tracking(Yolo, input_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES,
                     score_threshold=0.3, iou_threshold=0.45, rectangle_colors='', Track_only=[]):
     # initialize deep sort object
     model_filename = 'model_data/mars-small128.pb'
     encoder = gdet.create_box_encoder(model_filename, batch_size=1)
+
     tracker = setup_tracker()
 
     times, times_2 = [], []
@@ -59,9 +60,9 @@ def Object_tracking(Yolo, input_path, output_path, input_size=416, show=False, C
     codec = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter(output_path, codec, fps, (width, height))  # output_path must be .mp4
 
-    NUM_CLASS = read_class_names(CLASSES)
-    key_list = list(NUM_CLASS.keys())
-    val_list = list(NUM_CLASS.values())
+    num_class = read_class_names(CLASSES)
+    key_list = list(num_class.keys())
+    val_list = list(num_class.values())
     while True:
         _, frame = vid.read()
 
@@ -76,6 +77,7 @@ def Object_tracking(Yolo, input_path, output_path, input_size=416, show=False, C
         image_data = image_data[np.newaxis, ...].astype(np.float32)
 
         t1 = time.time()
+
         if YOLO_FRAMEWORK == "tf":
             pred_bbox = Yolo.predict(image_data)
         elif YOLO_FRAMEWORK == "trt":
@@ -99,11 +101,11 @@ def Object_tracking(Yolo, input_path, output_path, input_size=416, show=False, C
         # extract bboxes to boxes (x, y, width, height), scores and names
         boxes, scores, names = [], [], []
         for bbox in bboxes:
-            if len(Track_only) != 0 and NUM_CLASS[int(bbox[5])] in Track_only or len(Track_only) == 0:
+            if len(Track_only) != 0 and num_class[int(bbox[5])] in Track_only or len(Track_only) == 0:
                 boxes.append([bbox[0].astype(int), bbox[1].astype(int), bbox[2].astype(int) - bbox[0].astype(int),
                               bbox[3].astype(int) - bbox[1].astype(int)])
                 scores.append(bbox[4])
-                names.append(NUM_CLASS[int(bbox[5])])
+                names.append(num_class[int(bbox[5])])
 
         # Obtain all the detections for the given frame.
         boxes = np.array(boxes)
@@ -162,5 +164,5 @@ def Object_tracking(Yolo, input_path, output_path, input_size=416, show=False, C
 
 
 yolo = Load_Yolo_model()
-Object_tracking(yolo, video_path, "detection.mp4", input_size=YOLO_INPUT_SIZE, show=True, iou_threshold=0.1,
+object_tracking(yolo, video_path, "detection.mp4", input_size=YOLO_INPUT_SIZE, show=True, iou_threshold=0.1,
                 rectangle_colors=(255, 0, 0), Track_only=["person"])
