@@ -9,7 +9,6 @@
 #
 #================================================================
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -21,6 +20,8 @@ from deep_sort import nn_matching
 from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from deep_sort import generate_detections as gdet
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 video_path   = "./IMAGES/test.mp4"
 
