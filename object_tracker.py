@@ -13,7 +13,7 @@ import os
 import cv2
 import numpy as np
 import tensorflow as tf
-from yolo.utils import Load_Yolo_model, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names
+from yolo.utils import load_yolo_model, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names
 from yolo.configs import *
 import time
 
@@ -163,6 +163,6 @@ def object_tracking(Yolo, input_path, output_path, input_size=416, show=False, C
     cv2.destroyAllWindows()
 
 
-yolo = Load_Yolo_model()
+yolo = load_yolo_model()
 object_tracking(yolo, video_path, "detection.mp4", input_size=YOLO_INPUT_SIZE, show=True, iou_threshold=0.1,
                 rectangle_colors=(255, 0, 0), Track_only=["person"])

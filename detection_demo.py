@@ -12,14 +12,14 @@
 import os
 
 from yolo.configs import *
-from yolo.utils import detect_image, Load_Yolo_model
+from yolo.utils import detect_image, load_yolo_model
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 image_path = "./IMAGES/kite.jpg"
 video_path = "./IMAGES/test.mp4"
 
-yolo = Load_Yolo_model()
+yolo = load_yolo_model()
 detect_image(yolo, image_path, "./IMAGES/kite_pred.jpg", input_size=YOLO_INPUT_SIZE, show=True,
              rectangle_colors=(255, 0, 0))
 
