@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba824b28-66db-4127-af5d-66d9acf53bb3" name="Changes" comment="add refactor profile" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EUCVrlKAZBYDSJMeHwmISDPRVY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba824b28-66db-4127-af5d-66d9acf53bb3" name="Changes" comment="" />
+      <created>1662640803401</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662640803401</updated>
+    </task>
+    <task id="LOCAL-00001" summary="refactor name">
+      <created>1662643627521</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662643627521</updated>
+    </task>
+    <task id="LOCAL-00002" summary="move os environ">
+      <created>1662643691924</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662643691924</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add refactor profile">
+      <created>1662643753404</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662643753404</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor tracker">
+      <created>1662644246610</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662644246610</updated>
+    </task>
+    <task id="LOCAL-00005" summary="rename function">
+      <created>1662646916356</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662646916356</updated>
+    </task>
+    <task id="LOCAL-00006" summary="delete legacy code">
+      <created>1662647383530</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1662647383530</updated>
+    </task>
+    <task id="LOCAL-00007" summary="clean unused import">
+      <created>1662647528543</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662647528543</updated>
+    </task>
+    <task id="LOCAL-00008" summary="rename import">
+      <created>1662647568566</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662647568567</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add refactor profile">
+      <created>1662647591979</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1662647591979</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor name" />
+    <MESSAGE value="move os environ" />
+    <MESSAGE value="refactor tracker" />
+    <MESSAGE value="rename function" />
+    <MESSAGE value="delete legacy code" />
+    <MESSAGE value="clean unused import" />
+    <MESSAGE value="rename import" />
+    <MESSAGE value="add refactor profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add refactor profile" />
+  </component>
+</project>
